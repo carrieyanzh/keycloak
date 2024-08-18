@@ -1,0 +1,15 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/carrie
+          jwk-set-uri: http://localhost:8080/realms/carrie/protocol/openid-connect/certs
+server:
+  port: 8081
+
+jwt:
+  auth:
+    convert:
+      resource-id: carrie-api
+      principle-attribute: preferred_username
